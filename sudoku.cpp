@@ -171,9 +171,14 @@ bool find_cell(int p[][9], vector<pair<int,int> > &original_pos, int &row,int &c
 
 void solve_puzzle(int p[][9], std::vector<pair<int,int> > &original_pos) {
 	//calls function that solves the puzzle
-	fill_cells(p,1,1,original_pos);
-	//print puzzle
-	printpuzzle(p);
+	if(fill_cells(p,1,1,original_pos))
+	{	//print puzzle
+		printpuzzle(p);
+	}
+	else
+	{
+		cout<<"No solutions";
+	}
 }
 
 bool fill_cells(int p[][9], int row,int col, vector<pair<int,int> > &original_pos) {
